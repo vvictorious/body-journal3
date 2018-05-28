@@ -1,0 +1,22 @@
+{
+  "name": "body-journal3",
+  "version": "1.0.0",
+  "description": "app to track fitness habits",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vvictorious/body-journal3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vvictorious/body-journal3/issues"
+  },
+  "homepage": "https://github.com/vvictorious/body-journal3#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
