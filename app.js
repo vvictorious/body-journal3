@@ -8,9 +8,7 @@ const app = express();
 // Map global promise - get rid of warning
 mongoose.Promise = global.Promise;
 // Connect to mongoose
-mongoose.connect('mongodb://localhost/body-journal3-dev', {
-  useMongoClient: true
-})
+mongoose.connect('mongodb://localhost/body-journal3-dev')
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
@@ -57,6 +55,18 @@ app.get('/ideas/add', (req, res) => {
   res.render('ideas/add');
 });
 
+// Edit Idea Form
+app.get('/ideas/edit/:id', (req, res) => {  
+  Idea.findOne({
+    _id: req.params.id
+  })
+  .then(idea => {
+    res.render('ideas/edit', {
+      idea:idea
+    });
+  });
+});
+
 // Process Form
 app.post('/ideas', (req, res) => {
   let errors = [];
@@ -85,6 +95,16 @@ app.post('/ideas', (req, res) => {
         res.redirect('/ideas');
       })
   }
+});
+
+//user login route
+app.get('/users/login', (req, res) =>{
+  res.send('login');
+});
+
+//user register route
+app.get('/users/register', (req, res) =>{
+  res.send('register');
 });
 
 const port = 5000;
