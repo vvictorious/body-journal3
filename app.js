@@ -118,6 +118,11 @@ app.put('/ideas/:id', (req, res) =>{
   });
 })
 
+//delete idea
+app.delete('/ideas/:id', (req, res) => {
+  res.send('DELETE');
+});
+
 // //user login route
 // app.get('/users/login', (req, res) =>{
 //   res.send('login');
